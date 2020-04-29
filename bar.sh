@@ -21,7 +21,7 @@ while read -r line; do
         S*) ws_in="${line#?}" ;;
         U*) utime="${line#?}" ;;
     esac
-    final_output="%{l}$utime%{c}$ws_in|$upg_c%{r}$clock"
+    final_output="%{l}$ws_in%{c}HELLO, $USER!%{r}UPD: $upg_c | UPT: $utime | CLK: $clock"
     echo "$final_output"
 done < "$FIFO_FILE" | lemonbar | sh &
 
